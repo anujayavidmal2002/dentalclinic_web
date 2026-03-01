@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  h1 {
+    font-family: var(--font-playfair);
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 3.75rem;
+    }
+  }
+
+  h2 {
+    font-family: var(--font-playfair);
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 2.25rem;
+    }
+  }
+
+  h3 {
+    font-family: var(--font-playfair);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 1.875rem;
+    }
+  }
+
+  h4 {
+    font-family: var(--font-playfair);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.625;
+  }
+
+  a {
+    transition-property: color;
+    transition-duration: 200ms;
+  }
+
+  button {
+    transition-property: all;
+    transition-duration: 200ms;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #93c5fd;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+}
