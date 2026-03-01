@@ -31,21 +31,18 @@ export default function GalleryPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-8">Before & After Transformations</h2>
         <div className="grid md:grid-cols-2 gap-6">
-          {beforeAfterItems.map((item, idx) => (
+          {beforeAfterItems.map((item) => (
             <Card key={item.id} hover>
               <div className="space-y-4">
-                <div className="relative w-full h-64 rounded-lg overflow-hidden bg-surface-200">
+                <div className="relative w-full h-96 rounded-lg overflow-hidden bg-surface-200">
                   <Image
-                    src={`https://picsum.photos/700/500?random=beforeafter${idx}`}
-                    alt={item.caption || "Before and After"}
+                    src={item.beforeImage || "/images/gallery/default.jpg"}
+                    alt={item.alt || item.caption || "Before and after"}
                     fill
                     className="object-cover"
                   />
                 </div>
-                {item.caption && (
-                  <p className="font-semibold text-surface-900">{item.caption}</p>
-                )}
-                <p className="text-sm text-surface-600">{item.alt}</p>
+                <p className="font-semibold text-surface-900">{item.caption}</p>
               </div>
             </Card>
           ))}

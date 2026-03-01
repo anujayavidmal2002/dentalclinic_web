@@ -20,7 +20,7 @@ export function Header() {
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
               <div className="relative w-12 h-12 flex-shrink-0">
                 <Image
-                  src="/images/logo/logo.png"
+                  src="/images/logo/logonn.png"
                   alt="Glamour Dental Logo"
                   fill
                   className="object-contain"

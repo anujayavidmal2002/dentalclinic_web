@@ -9,12 +9,8 @@ import { doctors } from "@/lib/data/doctors";
 import { testimonials } from "@/lib/data/testimonials";
 import { blogPosts } from "@/lib/data/blog";
 import {
-  Smile,
   Award,
-  Heart,
-  Zap,
   Users,
-  Shield,
   Star,
   ArrowRight,
 } from "lucide-react";
@@ -120,42 +116,45 @@ export default function Home() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {[
             {
-              icon: Award,
               title: "Expert Team",
               description: "Board-certified dentists with continuous education",
+              number: "01",
             },
             {
-              icon: Zap,
               title: "Advanced Technology",
               description: "Latest equipment for precise diagnosis and treatment",
+              number: "02",
             },
             {
-              icon: Heart,
               title: "Patient Comfort",
               description: "Gentle care in a welcoming, anxiety-free environment",
+              number: "03",
             },
             {
-              icon: Shield,
               title: "Safety First",
               description: "Strict sterilization protocols and safety standards",
+              number: "04",
             },
             {
-              icon: Smile,
               title: "Personalized Care",
               description: "Custom treatment plans tailored to your needs",
+              number: "05",
             },
             {
-              icon: Users,
               title: "Family Friendly",
               description: "Services for all ages from kids to seniors",
+              number: "06",
             },
           ].map((item) => {
-            const Icon = item.icon;
             return (
-              <Card key={item.title} hover>
-                <Icon size={40} className="text-brand-600 mb-4" />
-                <h3 className="font-bold text-xl mb-2">{item.title}</h3>
-                <p className="text-surface-600">{item.description}</p>
+              <Card key={item.title} hover className="relative overflow-hidden border-l-4 border-l-brand-600">
+                <div className="absolute top-0 right-0 text-6xl font-bold text-brand-50 opacity-20">
+                  {item.number}
+                </div>
+                <div className="relative z-10">
+                  <h3 className="font-bold text-xl mb-2">{item.title}</h3>
+                  <p className="text-surface-600">{item.description}</p>
+                </div>
               </Card>
             );
           })}

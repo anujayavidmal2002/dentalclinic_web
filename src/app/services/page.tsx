@@ -54,7 +54,7 @@ export default function ServicesPage() {
               href={`/services/${service.slug}`}
               className="overflow-hidden bg-surface-white rounded-lg border border-surface-200 hover:border-brand-300 hover:shadow-md transition-all"
             >
-              <div className="relative w-full h-24 bg-surface-200">
+              <div className="relative w-full h-48 bg-surface-200">
                 <Image
                   src={service.image}
                   alt={service.name}
@@ -62,9 +62,10 @@ export default function ServicesPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-lg mb-1">{service.name}</h3>
-                <p className="text-sm text-surface-600">{service.shortDescription}</p>
+              <div className="p-4 flex flex-col h-full">
+                <h3 className="font-semibold text-lg mb-2">{service.name}</h3>
+                <p className="text-sm text-surface-600 mb-4 flex-grow">{service.shortDescription}</p>
+                <span className="text-brand-600 font-semibold text-sm">Learn more →</span>
               </div>
             </Link>
           ))}

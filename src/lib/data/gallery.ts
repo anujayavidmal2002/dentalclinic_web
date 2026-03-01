@@ -6,7 +6,7 @@ export const galleryItems: GalleryItem[] = [
     category: "before-after",
     alt: "Dental implant transformation - before and after",
     caption: "Dental Implant Case",
-    beforeImage: "/images/gallery/implant-before.jpg",
+    beforeImage: "/images/gallery/impantcomp.png",
     afterImage: "/images/gallery/implant-after.jpg",
   },
   {
@@ -14,7 +14,7 @@ export const galleryItems: GalleryItem[] = [
     category: "before-after",
     alt: "Teeth whitening results - bright smile transformation",
     caption: "Professional Teeth Whitening",
-    beforeImage: "/images/gallery/whitening-before.jpg",
+    beforeImage: "/images/gallery/whiteningcomp.png",
     afterImage: "/images/gallery/whitening-after.jpg",
   },
   {
@@ -22,7 +22,7 @@ export const galleryItems: GalleryItem[] = [
     category: "before-after",
     alt: "Orthodontic braces alignment results - straight teeth",
     caption: "Orthodontic Alignment",
-    beforeImage: "/images/gallery/braces-before.jpg",
+    beforeImage: "https://picsum.photos/600/400?random=ortho1",
     afterImage: "/images/gallery/braces-after.jpg",
   },
   {
@@ -30,7 +30,7 @@ export const galleryItems: GalleryItem[] = [
     category: "before-after",
     alt: "Cosmetic veneer smile makeover - natural appearance",
     caption: "Cosmetic Veneer Makeover",
-    beforeImage: "/images/gallery/veneer-before.jpg",
+    beforeImage: "https://picsum.photos/600/400?random=veneer1",
     afterImage: "/images/gallery/veneer-after.jpg",
   },
   {
@@ -38,7 +38,7 @@ export const galleryItems: GalleryItem[] = [
     category: "before-after",
     alt: "Invisalign clear aligner results - discreet teeth straightening",
     caption: "Invisalign Clear Aligners",
-    beforeImage: "/images/gallery/invisalign-before.jpg",
+    beforeImage: "https://picsum.photos/600/400?random=invisalign1",
     afterImage: "/images/gallery/invisalign-after.jpg",
   },
   {
