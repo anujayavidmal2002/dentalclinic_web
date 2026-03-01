@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { services } from "@/lib/data/services";
 import { Button } from "@/components/ui/Button";
@@ -44,6 +45,19 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </Badge>
           <h1 className="text-5xl font-heading font-bold mb-4">{service.name}</h1>
           <p className="text-xl text-blue-100">{service.shortDescription}</p>
+        </div>
+      </section>
+
+      {/* Service Image */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative w-full h-96 rounded-lg overflow-hidden mb-12 bg-surface-200">
+          <Image
+            src={service.image}
+            alt={service.name}
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </section>
 

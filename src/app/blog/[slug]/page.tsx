@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { blogPosts } from "@/lib/data/blog";
 import { Badge } from "@/components/ui/Badge";
 import { formatDate } from "@/lib/utils/formatDate";
@@ -70,8 +71,14 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
       {/* Featured Image */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-surface-200 rounded-lg h-96 flex items-center justify-center">
-          <p className="text-surface-600">Featured Image</p>
+        <div className="relative w-full h-96 rounded-lg overflow-hidden bg-surface-200">
+          <Image
+            src="https://picsum.photos/800/600?random=detail"
+            alt={post.title}
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </section>
 
@@ -119,14 +126,19 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-surface-200 pt-12">
           <h2 className="text-3xl font-bold mb-8">Related Articles</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {relatedPosts.map((related) => (
+            {relatedPosts.map((related, idx) => (
               <Link
                 key={related.slug}
                 href={`/blog/${related.slug}`}
                 className="group"
               >
-                <div className="bg-surface-100 rounded-lg h-40 flex items-center justify-center group-hover:bg-surface-200 transition-colors mb-4">
-                  <p className="text-surface-600">Image</p>
+                <div className="relative w-full h-40 rounded-lg overflow-hidden mb-4 bg-surface-100 group-hover:opacity-90 transition-opacity">
+                  <Image
+                    src={`https://picsum.photos/500/300?random=related${idx}`}
+                    alt={related.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <h3 className="font-bold group-hover:text-brand-600 transition-colors mb-2">
                   {related.title}

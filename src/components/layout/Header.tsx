@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/data/site";
@@ -17,8 +18,14 @@ export function Header() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-              <div className="w-10 h-10 bg-gradient-brand rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">GD</span>
+              <div className="relative w-12 h-12 flex-shrink-0">
+                <Image
+                  src="/images/logo/logo.png"
+                  alt="Glamour Dental Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
               <div className="hidden sm:block">
                 <p className="font-heading font-bold text-lg text-brand-900">

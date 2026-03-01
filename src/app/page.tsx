@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -29,8 +30,15 @@ export default function Home() {
     <div className="space-y-20">
       {/* ===== HERO SECTION ===== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-brand" />
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/images/hero/dental-chair.jpg')`,
+          }}
+        />
+        {/* Background Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-brand opacity-30" />
 
         {/* Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
@@ -166,12 +174,17 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-6">
           {featuredServices.map((service) => (
             <Link key={service.slug} href={`/services/${service.slug}`}>
-              <Card hover className="h-full">
-                <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
-                  <Smile className="text-brand-600" size={24} />
+              <Card hover className="h-full flex flex-col">
+                <div className="relative w-full h-32 rounded-lg overflow-hidden mb-4 bg-surface-200">
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <h3 className="font-bold text-lg mb-2">{service.name}</h3>
-                <p className="text-surface-600 text-sm mb-4">{service.shortDescription}</p>
+                <p className="text-surface-600 text-sm mb-4 flex-grow">{service.shortDescription}</p>
                 <span className="text-brand-600 font-semibold text-sm">Learn more →</span>
               </Card>
             </Link>
@@ -276,11 +289,16 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {latestBlogPosts.map((post) => (
+            {latestBlogPosts.map((post, idx) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}>
                 <Card hover className="h-full flex flex-col">
-                  <div className="bg-surface-200 rounded-lg h-40 flex items-center justify-center mb-4">
-                    <p className="text-surface-600 text-sm">Featured Image</p>
+                  <div className="relative w-full h-40 rounded-lg overflow-hidden mb-4 bg-surface-200">
+                    <Image
+                      src={`https://picsum.photos/500/300?random=${idx}`}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
 
                   <Badge variant="secondary" className="w-fit mb-3">
@@ -334,8 +352,13 @@ export default function Home() {
           {[...Array(4)].map((_, i) => (
             <Link key={i} href="/gallery">
               <Card hover>
-                <div className="bg-surface-200 rounded-lg h-64 flex items-center justify-center">
-                  <p className="text-surface-600">Before & After Gallery Image {i + 1}</p>
+                <div className="relative w-full h-64 rounded-lg overflow-hidden bg-surface-200">
+                  <Image
+                    src={`https://picsum.photos/700/500?random=${i}`}
+                    alt={`Before & After Gallery Image ${i + 1}`}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </Card>
             </Link>

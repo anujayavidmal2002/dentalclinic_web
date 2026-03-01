@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { blogPosts } from "@/lib/data/blog";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -33,8 +34,13 @@ export default function BlogPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-6">Featured Article</h2>
           <Card hover className="md:grid md:grid-cols-2 gap-8">
-            <div className="bg-surface-200 rounded-lg h-64 md:h-auto flex items-center justify-center mb-4 md:mb-0">
-              <p className="text-surface-600 text-center">Featured Image</p>
+            <div className="relative w-full h-64 md:h-auto rounded-lg overflow-hidden mb-4 md:mb-0 bg-surface-200">
+              <Image
+                src="https://picsum.photos/600/400?random=featured"
+                alt={featured[0].title}
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="flex flex-col justify-center">
               <Badge variant="primary" className="w-fit mb-3">
@@ -66,10 +72,15 @@ export default function BlogPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-8">Latest Articles</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {[...featured.slice(1), ...other].map((post) => (
+          {[...featured.slice(1), ...other].map((post, idx) => (
             <Card key={post.slug} hover>
-              <div className="bg-surface-200 rounded-lg h-40 flex items-center justify-center mb-4">
-                <p className="text-surface-600 text-center">Image</p>
+              <div className="relative w-full h-40 rounded-lg overflow-hidden mb-4 bg-surface-200">
+                <Image
+                  src={`https://picsum.photos/500/300?random=${idx}`}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               <Badge variant="secondary" className="mb-3">

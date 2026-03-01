@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/lib/data/services";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -32,8 +33,6 @@ const iconMap: Record<string, any> = {
 };
 
 export default function ServicesPage() {
-  const featuredServices = services.filter((s) => s.featured);
-  const otherServices = services.filter((s) => !s.featured);
 
   return (
     <div className="space-y-20 pt-8">
@@ -46,48 +45,27 @@ export default function ServicesPage() {
         />
       </section>
 
-      {/* Featured Services */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold mb-8">Featured Services</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {featuredServices.map((service) => {
-            const Icon = iconMap[service.icon] || Smile;
-            return (
-              <Card key={service.slug} hover className="flex flex-col">
-                <div className="mb-4 p-3 bg-brand-100 rounded-lg w-fit">
-                  <Icon size={28} className="text-brand-600" />
-                </div>
-                <h3 className="font-bold text-xl mb-2">{service.name}</h3>
-                <p className="text-surface-600 text-sm mb-4 flex-grow">
-                  {service.shortDescription}
-                </p>
-                <Button
-                  asLink
-                  href={`/services/${service.slug}`}
-                  variant="ghost"
-                  size="sm"
-                  className="self-start"
-                >
-                  Learn More →
-                </Button>
-              </Card>
-            );
-          })}
-        </div>
-      </section>
-
       {/* All Services */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold mb-8">All Services</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {otherServices.map((service) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="p-4 bg-surface-white rounded-lg border border-surface-200 hover:border-brand-300 hover:bg-brand-50 transition-all"
+              className="overflow-hidden bg-surface-white rounded-lg border border-surface-200 hover:border-brand-300 hover:shadow-md transition-all"
             >
-              <h3 className="font-semibold text-lg mb-1">{service.name}</h3>
-              <p className="text-sm text-surface-600">{service.shortDescription}</p>
+              <div className="relative w-full h-24 bg-surface-200">
+                <Image
+                  src={service.image}
+                  alt={service.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-lg mb-1">{service.name}</h3>
+                <p className="text-sm text-surface-600">{service.shortDescription}</p>
+              </div>
             </Link>
           ))}
         </div>

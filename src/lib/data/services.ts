@@ -17,7 +17,7 @@ export const services: Service[] = [
       "Gum disease screening and treatment",
     ],
     icon: "Smile",
-    image: "/images/services/general-dentistry.jpg",
+    image: "/images/services/generaldentistry.jpg",
     metaTitle:
       "General Dentistry in Colombo - Glamour Dental | Preventive Care",
     metaDescription:
@@ -42,7 +42,7 @@ export const services: Service[] = [
       "Improved facial harmony and proportions",
     ],
     icon: "Sparkles",
-    image: "/images/services/cosmetic-dentistry.jpg",
+    image: "/images/services/cosmeticdentistry.jpg",
     metaTitle: "Cosmetic Dentistry in Colombo - Glamour Dental | Smile Design",
     metaDescription:
       "Transform your smile with cosmetic dentistry services at Glamour Dental. Digital smile design, veneers, and more.",
@@ -66,7 +66,7 @@ export const services: Service[] = [
       "Protects enamel during treatment",
     ],
     icon: "Zap",
-    image: "/images/services/teeth-whitening.jpg",
+    image: "/images/services/teethwhitening.jpg",
     metaTitle: "Professional Teeth Whitening in Colombo - Glamour Dental",
     metaDescription:
       "Brighten your smile with professional teeth whitening at Glamour Dental. Fast, safe, and effective results.",
@@ -89,8 +89,8 @@ export const services: Service[] = [
       "Improved speech and eating comfort",
       "Long-lasting results with proper care",
     ],
-    icon: "Tooth",
-    image: "/images/services/dental-implants.jpg",
+    icon: "Gem",
+    image: "/images/services/implant.jpg",
     metaTitle: "Dental Implants in Colombo - Glamour Dental | Expert Placement",
     metaDescription:
       "Replace missing teeth with premium dental implants at Glamour Dental. Expert care and natural-looking results.",
@@ -114,7 +114,7 @@ export const services: Service[] = [
       "Prevents tooth loss and bone loss",
     ],
     icon: "Activity",
-    image: "/images/services/root-canal.jpg",
+    image: "/images/services/rootcanal.jpg",
     metaTitle: "Root Canal Treatment in Colombo - Glamour Dental | Expert Care",
     metaDescription:
       "Expert root canal treatment to save your tooth at Glamour Dental. Advanced endodontics with high success rates.",
@@ -138,7 +138,7 @@ export const services: Service[] = [
       "Enhanced facial aesthetics and proportion",
     ],
     icon: "Zap",
-    image: "/images/services/orthodontics.jpg",
+    image: "/images/services/braces.jpg",
     metaTitle: "Orthodontics & Braces in Colombo - Glamour Dental | Smile Straightening",
     metaDescription:
       "Straighten your teeth with expert orthodontics and braces at Glamour Dental. Modern solutions for perfect alignment.",
@@ -162,7 +162,7 @@ export const services: Service[] = [
       "Instantly improve smile aesthetics",
     ],
     icon: "Sparkles",
-    image: "/images/services/veneers.jpg",
+    image: "/images/services/cosmeticdentistry.jpg",
     metaTitle: "Porcelain Veneers in Colombo - Glamour Dental | Smile Makeover",
     metaDescription:
       "Transform your smile with porcelain veneers at Glamour Dental. Natural-looking and long-lasting results.",
@@ -186,7 +186,7 @@ export const services: Service[] = [
       "Improves chewing and speech",
     ],
     icon: "Shield",
-    image: "/images/services/crowns-bridges.jpg",
+    image: "/images/services/generaldentistry.jpg",
     metaTitle: "Dental Crowns & Bridges in Colombo - Glamour Dental",
     metaDescription:
       "Restore your smile with dental crowns and bridges at Glamour Dental. Durable and natural-looking restorations.",
@@ -210,7 +210,7 @@ export const services: Service[] = [
       "Predictable results with digital planning",
     ],
     icon: "Eye",
-    image: "/images/services/invisalign.jpg",
+    image: "/images/services/braces.jpg",
     metaTitle: "Invisalign & Clear Aligners in Colombo - Glamour Dental",
     metaDescription:
       "Straighten teeth discreetly with Invisalign and clear aligners at Glamour Dental. Modern orthodontic solution.",
@@ -234,7 +234,7 @@ export const services: Service[] = [
       "Sports mouthguards and fluoride treatments",
     ],
     icon: "Heart",
-    image: "/images/services/pediatric-dentistry.jpg",
+    image: "/images/services/generaldentistry.jpg",
     metaTitle: "Pediatric Dentistry in Colombo - Glamour Dental | Kids Dental Care",
     metaDescription:
       "Specialized pediatric dental care for children at Glamour Dental. Friendly environment and expert care.",
@@ -258,7 +258,7 @@ export const services: Service[] = [
       "Reduces bad breath and bleeding gums",
     ],
     icon: "Shield",
-    image: "/images/services/gum-treatment.jpg",
+    image: "/images/services/generaldentistry.jpg",
     metaTitle: "Gum Disease Treatment in Colombo - Glamour Dental | Periodontics",
     metaDescription:
       "Expert gum disease and periodontal treatment at Glamour Dental. Healthy gums for a healthy smile.",
@@ -282,7 +282,7 @@ export const services: Service[] = [
       "Expert emergency care 24/7 availability",
     ],
     icon: "AlertCircle",
-    image: "/images/services/emergency-dentistry.jpg",
+    image: "/images/services/generaldentistry.jpg",
     metaTitle: "Emergency Dentistry in Colombo - Glamour Dental | Urgent Care",
     metaDescription:
       "Fast emergency dental care in Colombo. Same-day appointments for urgent dental problems at Glamour Dental.",

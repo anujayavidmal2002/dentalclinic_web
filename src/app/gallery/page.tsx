@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { galleryItems } from "@/lib/data/gallery";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -30,15 +31,16 @@ export default function GalleryPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-8">Before & After Transformations</h2>
         <div className="grid md:grid-cols-2 gap-6">
-          {beforeAfterItems.map((item) => (
+          {beforeAfterItems.map((item, idx) => (
             <Card key={item.id} hover>
               <div className="space-y-4">
-                <div className="bg-surface-200 rounded-lg h-64 flex items-center justify-center">
-                  <p className="text-surface-600 text-center">
-                    {item.caption}
-                    <br />
-                    <span className="text-sm">(Before & After Image Placeholder)</span>
-                  </p>
+                <div className="relative w-full h-64 rounded-lg overflow-hidden bg-surface-200">
+                  <Image
+                    src={`https://picsum.photos/700/500?random=beforeafter${idx}`}
+                    alt={item.caption || "Before and After"}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 {item.caption && (
                   <p className="font-semibold text-surface-900">{item.caption}</p>
@@ -54,14 +56,15 @@ export default function GalleryPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-8">Our Facility</h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {clinicItems.map((item) => (
+          {clinicItems.map((item, idx) => (
             <Card key={item.id} hover>
-              <div className="bg-surface-200 rounded-lg h-48 flex items-center justify-center mb-4">
-                <p className="text-surface-600 text-center">
-                  {item.caption}
-                  <br />
-                  <span className="text-sm">(Image Placeholder)</span>
-                </p>
+              <div className="relative w-full h-48 rounded-lg overflow-hidden mb-4 bg-surface-200">
+                <Image
+                  src={`https://picsum.photos/500/350?random=clinic${idx}`}
+                  alt={item.caption || "Clinic"}
+                  fill
+                  className="object-cover"
+                />
               </div>
               {item.caption && (
                 <p className="font-semibold text-surface-900">{item.caption}</p>
@@ -76,14 +79,15 @@ export default function GalleryPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-8">Our Team</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {teamItems.map((item) => (
+            {teamItems.map((item, idx) => (
               <Card key={item.id} hover>
-                <div className="bg-surface-200 rounded-lg h-64 flex items-center justify-center mb-4">
-                  <p className="text-surface-600 text-center">
-                    {item.caption}
-                    <br />
-                    <span className="text-sm">(Image Placeholder)</span>
-                  </p>
+                <div className="relative w-full h-64 rounded-lg overflow-hidden mb-4 bg-surface-200">
+                  <Image
+                    src={`https://picsum.photos/700/500?random=team${idx}`}
+                    alt={item.caption || "Team Member"}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 {item.caption && (
                   <p className="font-semibold text-surface-900">{item.caption}</p>
@@ -99,14 +103,15 @@ export default function GalleryPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-8">Procedures & Technology</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {procedureItems.map((item) => (
+            {procedureItems.map((item, idx) => (
               <Card key={item.id} hover>
-                <div className="bg-surface-200 rounded-lg h-48 flex items-center justify-center mb-4">
-                  <p className="text-surface-600 text-center">
-                    {item.caption}
-                    <br />
-                    <span className="text-sm">(Image Placeholder)</span>
-                  </p>
+                <div className="relative w-full h-48 rounded-lg overflow-hidden mb-4 bg-surface-200">
+                  <Image
+                    src={`https://picsum.photos/500/350?random=procedure${idx}`}
+                    alt={item.caption || "Procedure"}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 {item.caption && (
                   <p className="font-semibold text-surface-900">{item.caption}</p>
