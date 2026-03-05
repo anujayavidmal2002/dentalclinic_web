@@ -22,7 +22,7 @@ export default function ContactPage() {
     const whatsappMessage = `Hello! I'm interested in your dental services.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage: ${message}`;
 
     // WhatsApp API URL (94 is Sri Lanka's country code)
-    const whatsappUrl = `https://wa.me/94756349393?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/94702081832?text=${encodeURIComponent(whatsappMessage)}`;
 
     // Open WhatsApp
     window.open(whatsappUrl, "_blank");
