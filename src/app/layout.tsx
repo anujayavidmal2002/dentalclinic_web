@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://glamourdental.com"),
   title: `${siteConfig.name} - Premium Dental Care`,
   description: siteConfig.description,
+  icons: {
+    icon: "/images/logo/logonn.svg",
+  },
   keywords: [
     "dental clinic",
     "dentist",

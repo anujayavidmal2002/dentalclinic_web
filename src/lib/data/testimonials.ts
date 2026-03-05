@@ -3,17 +3,17 @@ import { Testimonial } from "@/types";
 export const testimonials: Testimonial[] = [
   {
     id: "1",
-    patientName: "Priya Perera",
+    patientName: "Jagath Perera",
     rating: 5,
     quote:
-      "I was extremely nervous about my dental implant procedure, but the entire team at Glamour Dental put me at ease. Dr. Johnson's expertise and gentle approach made all the difference. My new smile changed my life!",
+      "I was extremely nervous about my dental implant procedure, but the entire team at Glamour Dental put me at ease. Their expertise and gentle approach made all the difference. My new smile changed my life!",
     treatment: "Dental Implants",
     date: "2024-12-15",
     source: "website",
   },
   {
     id: "2",
-    patientName: "Rajesh Kumar",
+    patientName: "Maheshi Wijesinghe",
     rating: 5,
     quote:
       "The teeth whitening treatment at Glamour Dental gave me the bright smile I always wanted. The results were immediate and the care was professional. Highly recommended!",
@@ -26,7 +26,7 @@ export const testimonials: Testimonial[] = [
     patientName: "Chaminda Silva",
     rating: 5,
     quote:
-      "Finally got my braces off with Dr. Chen and I couldn't be happier with my straight teeth. The whole orthodontic journey was smooth and the results exceeded my expectations.",
+      "Finally got my braces off with Glamour Dental and I couldn't be happier with my straight teeth. The whole orthodontic journey was smooth and the results exceeded my expectations.",
     treatment: "Orthodontics",
     date: "2024-10-10",
     source: "facebook",

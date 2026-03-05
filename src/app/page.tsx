@@ -5,14 +5,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { services } from "@/lib/data/services";
-import { doctors } from "@/lib/data/doctors";
 import { testimonials } from "@/lib/data/testimonials";
 import { blogPosts } from "@/lib/data/blog";
+import { siteConfig } from "@/lib/data/site";
 import {
   Award,
   Users,
   Star,
   ArrowRight,
+  Phone,
 } from "lucide-react";
 import { formatDate } from "@/lib/utils/formatDate";
 
@@ -20,7 +21,6 @@ export default function Home() {
   const featuredServices = services.slice(0, 6);
   const featuredTestimonials = testimonials.slice(0, 3);
   const latestBlogPosts = blogPosts.slice(0, 3);
-  const featuredDoctors = doctors.slice(0, 2);
 
   return (
     <div className="space-y-20">
@@ -55,55 +55,23 @@ export default function Home() {
             <Button variant="primary" size="lg" asLink href="/book-appointment">
               Book Your Appointment
             </Button>
-            <Button variant="secondary" size="lg" asLink href="/services">
+            <Button variant="secondary" size="lg" asLink href={`tel:${siteConfig.phone}`}>
+              <Phone className="mr-2" size={20} />
+              Call Us
+            </Button>
+            <Button variant="primary" size="lg" asLink href="/services">
               Explore Services
             </Button>
           </div>
 
-          {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center gap-6 text-white text-sm">
-            <div className="flex items-center gap-2">
-              <Star className="fill-accent-500 text-accent-500" size={20} />
-              <span>4.8/5 Rating</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Users size={20} />
-              <span>5000+ Happy Patients</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Award size={20} />
-              <span>15+ Years Experience</span>
-            </div>
-          </div>
+
         </div>
 
         {/* Decorative Element */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-surface-50 to-transparent" />
       </section>
 
-      {/* ===== STATS BAR ===== */}
-      <section className="bg-brand-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">5000+</div>
-              <p className="text-blue-200">Happy Patients</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">15+</div>
-              <p className="text-blue-200">Years in Practice</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">12</div>
-              <p className="text-blue-200">Specialties</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">99%</div>
-              <p className="text-blue-200">Satisfaction Rate</p>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* ===== WHY CHOOSE US ===== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -115,34 +83,35 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {[
-            {
-              title: "Expert Team",
-              description: "Board-certified dentists with continuous education",
-              number: "01",
-            },
+
             {
               title: "Advanced Technology",
               description: "Latest equipment for precise diagnosis and treatment",
-              number: "02",
+              number: "01",
             },
             {
               title: "Patient Comfort",
               description: "Gentle care in a welcoming, anxiety-free environment",
-              number: "03",
+              number: "02",
             },
             {
               title: "Safety First",
               description: "Strict sterilization protocols and safety standards",
-              number: "04",
+              number: "03",
             },
             {
               title: "Personalized Care",
               description: "Custom treatment plans tailored to your needs",
-              number: "05",
+              number: "04",
             },
             {
               title: "Family Friendly",
               description: "Services for all ages from kids to seniors",
+              number: "05",
+            },
+            {
+              title: "Time Flexible",
+              description: "Convenient appointment times to fit your busy schedule",
               number: "06",
             },
           ].map((item) => {
@@ -184,55 +153,12 @@ export default function Home() {
                 </div>
                 <h3 className="font-bold text-lg mb-2">{service.name}</h3>
                 <p className="text-surface-600 text-sm mb-4 flex-grow">{service.shortDescription}</p>
-                <span className="text-brand-600 font-semibold text-sm">Learn more →</span>
               </Card>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* ===== FEATURED DOCTORS ===== */}
-      <section className="bg-surface-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Meet Our Experts"
-            subtitle="Our Dentists"
-            description="Experienced professionals dedicated to your smile"
-          />
-
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {featuredDoctors.map((doctor) => (
-              <Card key={doctor.slug} hover>
-                <div className="bg-gradient-brand rounded-lg h-48 flex items-center justify-center mb-6">
-                  <div className="text-center text-white">
-                    <div className="text-6xl font-bold mb-2">
-                      {doctor.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </div>
-                    <p className="text-blue-100">{doctor.specialty}</p>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold mb-1">
-                  {doctor.title} {doctor.name}
-                </h3>
-                <p className="text-brand-600 font-semibold mb-3">{doctor.specialty}</p>
-                <p className="text-surface-600 text-sm mb-4">{doctor.bio}</p>
-                <p className="text-xs text-surface-500">
-                  <strong>{doctor.experience}+ years</strong> • {doctor.credentials.join(", ")}
-                </p>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Button asLink href="/doctors" variant="outline" size="lg">
-              View All Doctors
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* ===== TESTIMONIALS ===== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -339,37 +265,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== GALLERY PREVIEW ===== */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <SectionHeading
-          title="Real Results"
-          subtitle="Before & After"
-          description="See the transformations we've created for our patients"
-        />
-
-        <div className="grid md:grid-cols-2 gap-6 mt-12">
-          {[...Array(4)].map((_, i) => (
-            <Link key={i} href="/gallery">
-              <Card hover>
-                <div className="relative w-full h-64 rounded-lg overflow-hidden bg-surface-200">
-                  <Image
-                    src={`https://picsum.photos/700/500?random=${i}`}
-                    alt={`Before & After Gallery Image ${i + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </Card>
-            </Link>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button asLink href="/gallery" variant="outline" size="lg">
-            View Full Gallery
-          </Button>
-        </div>
-      </section>
 
       {/* ===== FINAL CTA ===== */}
       <section className="bg-brand-50 py-20 border-t border-surface-200">
@@ -381,7 +276,11 @@ export default function Home() {
             Contact us anytime to discuss your dental needs or schedule an appointment
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Button asLink href="/contact" variant="secondary" size="lg">
+            <Button asLink href={`tel:${siteConfig.phone}`} variant="secondary" size="lg">
+              <Phone className="mr-2" size={20} />
+              Call Us
+            </Button>
+            <Button asLink href="/contact" variant="ghost" size="lg">
               Contact Us
             </Button>
             <Button asLink href="/faq" variant="ghost" size="lg">

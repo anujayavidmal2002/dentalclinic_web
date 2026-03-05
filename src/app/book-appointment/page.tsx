@@ -29,7 +29,7 @@ export default function BookAppointmentPage() {
     e.preventDefault();
 
     const message = `Hi Glamour Dental! I'd like to book an appointment.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nService: ${formData.service}\nPreferred Date: ${formData.date}\nNotes: ${formData.message}`;
-    const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/94756349393?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappUrl, "_blank");
     setSubmitted(true);
@@ -192,7 +192,7 @@ export default function BookAppointmentPage() {
                 <div>
                   <p className="font-semibold text-brand-600">Location</p>
                   <p className="text-surface-600">{siteConfig.address.street}</p>
-                  <p className="text-surface-600">{siteConfig.address.city}</p>
+                  <p className="text-surface-600">{siteConfig.address.city}, {siteConfig.address.state}</p>
                 </div>
               </div>
             </Card>

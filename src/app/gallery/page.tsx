@@ -71,29 +71,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Team */}
-      {teamItems.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8">Our Team</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {teamItems.map((item, idx) => (
-              <Card key={item.id} hover>
-                <div className="relative w-full h-64 rounded-lg overflow-hidden mb-4 bg-surface-200">
-                  <Image
-                    src={`https://picsum.photos/700/500?random=team${idx}`}
-                    alt={item.caption || "Team Member"}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                {item.caption && (
-                  <p className="font-semibold text-surface-900">{item.caption}</p>
-                )}
-              </Card>
-            ))}
-          </div>
-        </section>
-      )}
+
 
       {/* Procedures */}
       {procedureItems.length > 0 && (

@@ -1,15 +1,36 @@
-import type { Metadata } from "next";
+"use client";
+
 import { siteConfig } from "@/lib/data/site";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Contact Glamour Dental - Get in Touch",
-  description: "Contact Glamour Dental for appointments and inquiries. Visit us in Colombo or call us today.",
-};
+import { useRef } from "react";
 
 export default function ContactPage() {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = new FormData(formRef.current!);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const message = formData.get("message") as string;
+
+    // Construct WhatsApp message
+    const whatsappMessage = `Hello! I'm interested in your dental services.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage: ${message}`;
+
+    // WhatsApp API URL (94 is Sri Lanka's country code)
+    const whatsappUrl = `https://wa.me/94756349393?text=${encodeURIComponent(whatsappMessage)}`;
+
+    // Open WhatsApp
+    window.open(whatsappUrl, "_blank");
+
+    // Clear form
+    formRef.current?.reset();
+  };
+
   return (
     <div className="space-y-16 pt-8">
       {/* Hero */}
@@ -65,9 +86,9 @@ export default function ContactPage() {
                 <address className="text-sm text-surface-600 not-italic">
                   {siteConfig.address.street}
                   <br />
-                  {siteConfig.address.city}, {siteConfig.address.state}
+                  {siteConfig.address.city}, {siteConfig.address.state},
                   <br />
-                  {siteConfig.address.zip}, {siteConfig.address.country}
+                  {siteConfig.address.country}.
                 </address>
               </div>
             </div>
@@ -114,7 +135,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div>
             <h2 className="text-3xl font-bold mb-6">Send us a Message</h2>
-            <form className="space-y-4">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">
                   Full Name
@@ -189,7 +210,6 @@ export default function ContactPage() {
               "@type": "PostalAddress",
               streetAddress: siteConfig.address.street,
               addressLocality: siteConfig.address.city,
-              postalCode: siteConfig.address.zip,
               addressCountry: siteConfig.address.country,
             },
             telephone: siteConfig.phone,

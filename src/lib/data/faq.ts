@@ -21,17 +21,9 @@ export const faqItems: FaqItem[] = [
     id: "3",
     question: "What is the success rate of dental implants?",
     answer:
-      "Dental implants have a success rate of 95-98% when placed and maintained properly. The key to long-term success is good oral hygiene, regular checkups, and healthy gums. Our specialists use advanced 3D imaging and proven techniques to maximize success rates.",
+      "Dental implants have a success rate of 95-98% when placed and maintained properly. The key to long-term success is good oral hygiene, regular checkups, and healthy gums. Our certified dental surgeons use advanced 3D imaging and proven techniques to maximize success rates.",
     category: "Implants",
     order: 3,
-  },
-  {
-    id: "4",
-    question: "How long does a root canal take?",
-    answer:
-      "A typical root canal procedure takes 90 minutes to 2 hours, depending on the complexity of the tooth and the number of canals. Molars may take longer than front teeth. We use advanced rotary instruments to complete the procedure efficiently while ensuring thorough cleaning and sealing.",
-    category: "Treatment",
-    order: 4,
   },
   {
     id: "5",
@@ -45,7 +37,7 @@ export const faqItems: FaqItem[] = [
     id: "6",
     question: "How long will dental veneers last?",
     answer:
-      "Porcelain veneers typically last 10-15 years or longer with proper care. They are stain-resistant and very durable. Longevity depends on factors like your bite, oral hygiene habits, and whether you grind your teeth. We recommend avoiding chewing on hard objects and maintaining good oral hygiene.",
+      "Porcelain veneers typically last years with proper care. They are stain-resistant and very durable. Longevity depends on factors like your bite, oral hygiene habits, and whether you grind your teeth. We recommend avoiding chewing on hard objects and maintaining good oral hygiene.",
     category: "Cosmetic",
     order: 6,
   },
@@ -64,14 +56,6 @@ export const faqItems: FaqItem[] = [
       "Gum disease is primarily caused by plaque buildup on teeth and gums. Poor oral hygiene, smoking, hormonal changes, stress, and certain medications can increase your risk. Early stages (gingivitis) are reversible with improved oral hygiene and professional cleaning. Advanced stages (periodontitis) require more intensive treatment.",
     category: "Gum Health",
     order: 8,
-  },
-  {
-    id: "9",
-    question: "How long does Invisalign treatment take?",
-    answer:
-      "Most Invisalign treatments take 12-18 months, though some cases may be faster or require more time. The duration depends on the complexity of your bite issues. Invisalign is often faster than traditional braces because the aligners work more efficiently. Compliance with wearing the aligners 20-22 hours daily is crucial for timely results.",
-    category: "Orthodontics",
-    order: 9,
   },
   {
     id: "10",

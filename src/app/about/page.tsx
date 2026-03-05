@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
-import { doctors } from "@/lib/data/doctors";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -52,8 +51,8 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-3 gap-6">
           {[
             {
-              title: "Expert Team",
-              description: "Board-certified dentists with years of experience and continuous training",
+              title: "Safety First",
+              description: "Strict sterilization protocols and safety standards",
             },
             {
               title: "Advanced Technology",
@@ -84,38 +83,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Team */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold mb-12 text-center">Meet Our Team</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {doctors.map((doctor) => (
-            <Card key={doctor.slug} hover>
-              <h3 className="text-2xl font-bold mb-2">
-                {doctor.title} {doctor.name}
-              </h3>
-              <p className="text-brand-600 font-semibold mb-3">{doctor.specialty}</p>
-              <div className="mb-4">
-                <p className="text-sm text-surface-600 mb-2">
-                  <strong>Credentials:</strong> {doctor.credentials.join(", ")}
-                </p>
-                <p className="text-sm text-surface-600">
-                  <strong>Experience:</strong> {doctor.experience} years
-                </p>
-                <p className="text-sm text-surface-600">
-                  <strong>Languages:</strong> {doctor.languages.join(", ")}
-                </p>
-              </div>
-              <p className="text-surface-700 leading-relaxed text-sm">{doctor.bio}</p>
-              <Link
-                href="/doctors"
-                className="text-brand-600 hover:text-brand-700 font-semibold text-sm mt-4 inline-block"
-              >
-                View Full Profile →
-              </Link>
-            </Card>
-          ))}
-        </div>
-      </section>
+
 
       {/* CTA */}
       <section className="bg-gradient-brand text-white py-16">

@@ -20,7 +20,7 @@ export function Header() {
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
               <div className="relative w-12 h-12 flex-shrink-0">
                 <Image
-                  src="/images/logo/logonn.png"
+                  src="/images/logo/logo_new.svg"
                   alt="Glamour Dental Logo"
                   fill
                   className="object-contain"
@@ -54,12 +54,6 @@ export function Header() {
                 className="text-surface-700 hover:text-brand-600 font-medium transition-colors"
               >
                 Services
-              </Link>
-              <Link
-                href="/doctors"
-                className="text-surface-700 hover:text-brand-600 font-medium transition-colors"
-              >
-                Doctors
               </Link>
               <Link
                 href="/gallery"

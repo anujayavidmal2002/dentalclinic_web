@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/lib/data/services";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -49,10 +48,9 @@ export default function ServicesPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
-            <Link
+            <div
               key={service.slug}
-              href={`/services/${service.slug}`}
-              className="overflow-hidden bg-surface-white rounded-lg border border-surface-200 hover:border-brand-300 hover:shadow-md transition-all"
+              className="overflow-hidden bg-surface-white rounded-lg border border-surface-200"
             >
               <div className="relative w-full h-48 bg-surface-200">
                 <Image
@@ -65,9 +63,8 @@ export default function ServicesPage() {
               <div className="p-4 flex flex-col h-full">
                 <h3 className="font-semibold text-lg mb-2">{service.name}</h3>
                 <p className="text-sm text-surface-600 mb-4 flex-grow">{service.shortDescription}</p>
-                <span className="text-brand-600 font-semibold text-sm">Learn more →</span>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </section>

@@ -31,7 +31,7 @@ export function Footer() {
                 <span>
                   {siteConfig.address.street}, {siteConfig.address.city},
                   <br />
-                  {siteConfig.address.state} {siteConfig.address.zip},
+                  {siteConfig.address.state} ,
                   {siteConfig.address.country}
                 </span>
               </div>
