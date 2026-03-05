@@ -12,9 +12,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Doctors", href: "/doctors" },
     { label: "Gallery", href: "/gallery" },
-    { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
     { label: "FAQ", href: "/faq" },
   ];

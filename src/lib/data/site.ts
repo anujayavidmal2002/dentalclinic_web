@@ -9,9 +9,10 @@ export const siteConfig: SiteConfig = {
   whatsapp: "+94 070 208 18 32", // E.164 format without the + sign for wa.me
   email: "hello@glamourdental.lk",
   address: {
-    street: "730/01/A",
-    city: "Malabe Rd",
-    state: "Kottawa",
+    street: "730/01/A Malabe Rd",
+    city: "Pannipitiya",
+    state: "Western Province",
+    zip: "10230",
     country: "Sri Lanka",
   },
   coordinates: {

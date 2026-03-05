@@ -58,7 +58,7 @@ export function Footer() {
 
           {/* Hours */}
           <div className="space-y-4">
-            <h3 className="font-heading font-bold text-lg mb-6">Hours</h3>
+            <h3 className="font-heading font-bold text-lg mb-6">Hours ( Appointments Only )</h3>
             <div className="space-y-2 text-sm text-surface-200">
               {siteConfig.hours.map((hour, idx) => (
                 <div key={idx} className="flex items-start gap-3">
@@ -83,8 +83,8 @@ export function Footer() {
               {[
                 { label: "About Us", href: "/about" },
                 { label: "Book Appointment", href: "/book-appointment" },
-                { label: "Gallery", href: "/gallery" },
-                { label: "Blog", href: "/blog" },
+                //{ label: "Gallery", href: "/gallery" },
+                //{ label: "Blog", href: "/blog" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Contact", href: "/contact" },
               ].map((link) => (

@@ -99,7 +99,7 @@ export default function ContactPage() {
             <div className="flex items-start gap-4">
               <Clock className="text-brand-600 flex-shrink-0 mt-1" size={24} />
               <div>
-                <h3 className="font-bold text-lg mb-1">Hours</h3>
+                <h3 className="font-bold text-lg mb-1">Hours ( Appointments Only )</h3>
                 <div className="text-sm text-surface-600 space-y-1">
                   {siteConfig.hours.map((hour, idx) => (
                     <div key={idx}>

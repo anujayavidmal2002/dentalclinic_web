@@ -55,18 +55,7 @@ export function Header() {
               >
                 Services
               </Link>
-              <Link
-                href="/gallery"
-                className="text-surface-700 hover:text-brand-600 font-medium transition-colors"
-              >
-                Gallery
-              </Link>
-              <Link
-                href="/blog"
-                className="text-surface-700 hover:text-brand-600 font-medium transition-colors"
-              >
-                Blog
-              </Link>
+         
               <Link
                 href="/contact"
                 className="text-surface-700 hover:text-brand-600 font-medium transition-colors"

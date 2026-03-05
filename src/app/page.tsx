@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { services } from "@/lib/data/services";
 import { testimonials } from "@/lib/data/testimonials";
-import { blogPosts } from "@/lib/data/blog";
+// import { blogPosts } from "@/lib/data/blog";
 import { siteConfig } from "@/lib/data/site";
 import {
   Award,
@@ -15,12 +15,12 @@ import {
   ArrowRight,
   Phone,
 } from "lucide-react";
-import { formatDate } from "@/lib/utils/formatDate";
+// import { formatDate } from "@/lib/utils/formatDate";
 
 export default function Home() {
   const featuredServices = services.slice(0, 6);
   const featuredTestimonials = testimonials.slice(0, 3);
-  const latestBlogPosts = blogPosts.slice(0, 3);
+  // const latestBlogPosts = blogPosts.slice(0, 3);
 
   return (
     <div className="space-y-20">
@@ -200,6 +200,7 @@ export default function Home() {
       </section>
 
       {/* ===== LATEST BLOG ===== */}
+      {/* COMMENTED OUT - Blog section disabled
       <section className="bg-surface-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-12">
@@ -247,6 +248,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* ===== CTA BANNER ===== */}
       <section className="bg-gradient-brand text-white py-16">
