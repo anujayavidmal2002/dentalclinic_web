@@ -28,12 +28,17 @@ export function Footer() {
             <div className="space-y-3 text-sm text-surface-200">
               <div className="flex items-start gap-3">
                 <MapPin size={20} className="flex-shrink-0 mt-0.5" />
-                <span>
+                <a
+                  href="https://www.google.com/maps/dir//Glamour+Dental+Surgery,+730%2F01%2FA+Malabe+Rd,+Pannipitiya+10230/@6.8833513,79.9583435,14z/data=!4m18!1m8!3m7!1s0x640497ef8b0bea75:0xace12f7c55d3a219!2sGlamour+Dental+Surgery!8m2!3d6.8520251!4d79.968429!15sCjw3MzAvMDEvQSBNYWxhYmUgUmQsIFBhbm5pcGl0aXlhLCBXZXN0ZXJuIFByb3ZpbmNlLCBTcmkgTGFua2FaOyI5NzMwIDAxIGEgbWFsYWJlIHJkIHBhbm5pcGl0aXlhIHdlc3Rlcm4gcHJvdmluY2Ugc3JpIGxhbmthkgENZGVudGFsX2NsaW5pY5oBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsblQyMUdXRTB6YkdoalZWWmFWVEJPUmxsWFVsbGFiVFZ2Wlc1a1ZGVklZeEFC4AEA-gEECFkQLA!16s%2Fg%2F11zj6gmwpb!4m8!1m0!1m5!1m1!1s0x640497ef8b0bea75:0xace12f7c55d3a219!2m2!1d79.968429!2d6.8520251!3e9?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent-400 transition-colors"
+                >
                   {siteConfig.address.street}, {siteConfig.address.city},
                   <br />
                   {siteConfig.address.state} ,
                   {siteConfig.address.country}
-                </span>
+                </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={20} className="flex-shrink-0" />
@@ -106,12 +111,9 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-surface-200">
               {topServices.map((service) => (
                 <li key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="hover:text-accent-400 transition-colors"
-                  >
+                  <span className="text-surface-200">
                     {service.name}
-                  </Link>
+                  </span>
                 </li>
               ))}
               <li>
@@ -139,48 +141,36 @@ export function Footer() {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             {siteConfig.social.facebook && (
-              <a
-                href={siteConfig.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-accent-400 transition-colors"
+              <div
+                className="text-surface-white"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
-              </a>
+              </div>
             )}
             {siteConfig.social.instagram && (
-              <a
-                href={siteConfig.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-accent-400 transition-colors"
+              <div
+                className="text-surface-white"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
-              </a>
+              </div>
             )}
             {siteConfig.social.twitter && (
-              <a
-                href={siteConfig.social.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-accent-400 transition-colors"
+              <div
+                className="text-surface-white"
                 aria-label="Twitter"
               >
                 <Twitter size={20} />
-              </a>
+              </div>
             )}
             {siteConfig.social.linkedin && (
-              <a
-                href={siteConfig.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-accent-400 transition-colors"
+              <div
+                className="text-surface-white"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
-              </a>
+              </div>
             )}
           </div>
         </div>

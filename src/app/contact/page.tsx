@@ -83,13 +83,20 @@ export default function ContactPage() {
               <MapPin className="text-brand-600 flex-shrink-0 mt-1" size={24} />
               <div>
                 <h3 className="font-bold text-lg mb-1">Address</h3>
-                <address className="text-sm text-surface-600 not-italic">
-                  {siteConfig.address.street}
-                  <br />
-                  {siteConfig.address.city}, {siteConfig.address.state},
-                  <br />
-                  {siteConfig.address.country}.
-                </address>
+                <a
+                  href="https://www.google.com/maps/dir//Glamour+Dental+Surgery,+730%2F01%2FA+Malabe+Rd,+Pannipitiya+10230/@6.8833513,79.9583435,14z/data=!4m18!1m8!3m7!1s0x640497ef8b0bea75:0xace12f7c55d3a219!2sGlamour+Dental+Surgery!8m2!3d6.8520251!4d79.968429!15sCjw3MzAvMDEvQSBNYWxhYmUgUmQsIFBhbm5pcGl0aXlhLCBXZXN0ZXJuIFByb3ZpbmNlLCBTcmkgTGFua2FaOyI5NzMwIDAxIGEgbWFsYWJlIHJkIHBhbm5pcGl0aXlhIHdlc3Rlcm4gcHJvdmluY2Ugc3JpIGxhbmthkgENZGVudGFsX2NsaW5pY5oBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsblQyMUdXRTB6YkdoalZWWmFWVEJPUmxsWFVsbGFiVFZ2Wlc1a1ZGVklZeEFC4AEA-gEECFkQLA!16s%2Fg%2F11zj6gmwpb!4m8!1m0!1m5!1m1!1s0x640497ef8b0bea75:0xace12f7c55d3a219!2m2!1d79.968429!2d6.8520251!3e9?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-600 hover:text-brand-700 transition-colors font-medium"
+                >
+                  <address className="text-sm not-italic">
+                    {siteConfig.address.street}
+                    <br />
+                    {siteConfig.address.city}, {siteConfig.address.state},
+                    <br />
+                    {siteConfig.address.country}.
+                  </address>
+                </a>
               </div>
             </div>
           </Card>
