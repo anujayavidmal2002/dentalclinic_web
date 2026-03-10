@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://glamourdental.com"),
+  metadataBase: new URL("https://glamourdental.lk"),
   title: `${siteConfig.name} - Premium Dental Care`,
   description: siteConfig.description,
   icons: {
