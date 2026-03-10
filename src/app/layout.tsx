@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/og-default.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/logo/logonn.png",
+        width: 400,
+        height: 400,
         alt: siteConfig.name,
       },
     ],
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: ["/og-default.jpg"],
+    images: ["/images/logo/logonn.png"],
   },
   robots: {
     index: true,
@@ -104,7 +104,13 @@ export default function RootLayout({
                 opens: hour.open,
                 closes: hour.close,
               })),
-              image: "/og-default.jpg",
+              image: "/images/logo/logonn.png",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://glamourdental.lk/images/logo/logonn.png",
+                width: 400,
+                height: 400,
+              },
               priceRange: "$$",
               sameAs: Object.values(siteConfig.social).filter(Boolean),
             }),
