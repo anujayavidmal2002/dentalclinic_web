@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { siteConfig } from "@/lib/data/site";
 import { Header } from "@/components/layout/Header";
@@ -124,6 +125,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <Analytics />
       </body>
     </html>
   );
