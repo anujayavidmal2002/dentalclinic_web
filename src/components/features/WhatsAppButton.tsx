@@ -8,7 +8,9 @@ export function WhatsAppButton() {
     const message = encodeURIComponent(
       "Hi Glamour Dental! I'd like to inquire about your dental services."
     );
-    const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${message}`;
+    // Remove spaces and special characters from phone number
+    const phoneNumber = siteConfig.whatsapp.replace(/\s+/g, "").replace("+", "");
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, "_blank");
   };
 

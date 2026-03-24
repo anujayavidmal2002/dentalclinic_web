@@ -73,6 +73,35 @@ export default function Home() {
 
 
 
+      {/* ===== FEATURED SERVICES ===== */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="flex items-end justify-between mb-12">
+          <SectionHeading title="Our Services" subtitle="Comprehensive Dental Care" />
+          <Link href="/services" className="text-brand-600 font-semibold hover:text-brand-700">
+            View All →
+          </Link>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {featuredServices.map((service) => (
+            <Link key={service.slug} href={`/services/${service.slug}`}>
+              <Card hover className="h-full flex flex-col">
+                <div className="relative w-full h-32 rounded-lg overflow-hidden mb-4 bg-surface-200">
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="font-bold text-lg mb-2">{service.name}</h3>
+                <p className="text-surface-600 text-sm mb-4 flex-grow">{service.shortDescription}</p>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* ===== WHY CHOOSE US ===== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <SectionHeading
@@ -127,35 +156,6 @@ export default function Home() {
               </Card>
             );
           })}
-        </div>
-      </section>
-
-      {/* ===== FEATURED SERVICES ===== */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="flex items-end justify-between mb-12">
-          <SectionHeading title="Our Services" subtitle="Comprehensive Dental Care" />
-          <Link href="/services" className="text-brand-600 font-semibold hover:text-brand-700">
-            View All →
-          </Link>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {featuredServices.map((service) => (
-            <Link key={service.slug} href={`/services/${service.slug}`}>
-              <Card hover className="h-full flex flex-col">
-                <div className="relative w-full h-32 rounded-lg overflow-hidden mb-4 bg-surface-200">
-                  <Image
-                    src={service.image}
-                    alt={service.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <h3 className="font-bold text-lg mb-2">{service.name}</h3>
-                <p className="text-surface-600 text-sm mb-4 flex-grow">{service.shortDescription}</p>
-              </Card>
-            </Link>
-          ))}
         </div>
       </section>
 
